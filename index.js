@@ -1,7 +1,7 @@
 var notify = document.querySelector(".notify")
 var albums = document.querySelectorAll(".album")
 var itemsTotal = document.querySelector(".items-total")
-var saveBtn = document.querySelector("button")
+var saveBtn = document.querySelector(".button")
 
 var albumsSelected = []
 
@@ -21,6 +21,19 @@ while(i < albums.length){
         console.log(albumsSelected)
     }
     i++
+}
+
+saveBtn.onclick = function() {
+    itemsTotal.textContent = albumsSelected.length + " items saved"
+    notify.classList.add("active")
+
+    setTimeout(function(){
+        notify.classList.remove("active")
+
+
+        }, 2000)
+
+    console.log("saved")
 }
 
 
